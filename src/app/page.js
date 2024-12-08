@@ -145,7 +145,7 @@ CLM567890`}
                          focus:ring-blue-500 cursor-pointer"
             />
             <label htmlFor="groupByPrefix" className="ml-2 text-sm text-gray-700 cursor-pointer">
-              Separate records by first 3 characters (e.g., ABC123456, ZZZ123456 in different groups)
+              Separate records by first 3 characters (e.g., &quot;ABC123456&quot;, &quot;ZZZ123456&quot; in different groups)
             </label>
           </div>
 
