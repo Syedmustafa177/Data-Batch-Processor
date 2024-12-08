@@ -2,7 +2,8 @@
 
 A web application built with Next.js that helps users process and batch large sets of data efficiently. The application can automatically group data by prefixes and split it into manageable batches.
 
-![Data Batch Processor](https://raw.githubusercontent.com/Syedmustafa177/Data-Batch-Processor/main/public/preview.png)
+![image](https://github.com/user-attachments/assets/80510996-211f-40c1-a90d-c9d6487b745f)
+
 
 ## Features
 
