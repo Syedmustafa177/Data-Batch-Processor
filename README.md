@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Data Batch Processor
+
+A web application built with Next.js that helps users process and batch large sets of data efficiently. The application can automatically group data by prefixes and split it into manageable batches.
+
+![image](https://github.com/user-attachments/assets/80510996-211f-40c1-a90d-c9d6487b745f)
+
+
+## Features
+
+- **Flexible Data Input**: Paste your data with one entry per line
+- **Customizable Separator**: Choose any separator for your batched output (default: comma)
+- **Adjustable Batch Size**: Set your preferred batch size (default: 500)
+- **Automatic Grouping**: Option to group data by first 3 characters of each entry
+- **Copy to Clipboard**: Easily copy individual batches with a single click
+- **Real-time Processing**: Instant results with loading indicators
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## Live Demo
+
+Check out the live demo: [Data Batch Processor](https://data-batch-processor.vercel.app/)
+
+## Tech Stack
+
+- [Next.js 15.0](https://nextjs.org/) - React Framework
+- [React 19.0](https://reactjs.org/) - UI Library
+- [TailwindCSS](https://tailwindcss.com/) - Styling
+- [Lucide React](https://lucide.dev/) - Icons
+- TypeScript - Type Safety
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Syedmustafa177/Data-Batch-Processor.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd Data-Batch-Processor
+```
+
+3. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Input Data**: Paste your data in the text area, with one entry per line
+2. **Configure Settings**:
+   - Set your preferred separator (default is comma)
+   - Adjust batch size if needed (default is 500)
+   - Toggle "Separate records by first 3 characters" if you want to group similar entries
+3. **Process**: Click the "Process Data" button
+4. **View Results**: See your data organized into batches
+5. **Copy Batches**: Use the "Copy" button next to each batch to copy to clipboard
 
-## Learn More
+Example Input:
+```
+ABC123456
+ZZZ789012
+CL345678
+CI901234
+20567890
+CLM567890
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+├── app/
+│   ├── api/
+│   │   └── process/
+│   │       └── route.js       # API endpoint for data processing
+│   ├── layout.tsx             # Root layout component
+│   └── page.js                # Main page component
+├── components/
+│   └── Footer.tsx             # Footer component
+├── public/                    # Static assets
+├── styles/
+│   └── globals.css           # Global styles
+└── utils/
+    └── helpers.js            # Helper functions
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+Syed Mustafa Ali - [@syedmustafa177](https://twitter.com/syedmustafa177)
+
+- LinkedIn: [syedmustafa177](https://www.linkedin.com/in/syedmustafa177/)
+- Portfolio: [syedmustafa177.github.io/Portfolio-website](https://syedmustafa177.github.io/Portfolio-website/)
+- GitHub: [Syedmustafa177](https://github.com/Syedmustafa177)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
