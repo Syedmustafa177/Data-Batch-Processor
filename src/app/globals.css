@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --button-primary: #7d2ae8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,4 +19,242 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page Layout */
+.page-container {
+  @apply min-h-screen bg-gradient-to-br from-pink-50 to-blue-50;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  flex: 1 0 auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Header Styles */
+.header {
+  @apply text-center mb-12;
+}
+
+.title {
+  @apply text-4xl font-extrabold text-gray-900 tracking-tight mb-4;
+}
+
+.subtitle {
+  @apply text-xl text-gray-600 hover:text-blue-600 hover:underline transition-all duration-300 ease-in-out cursor-pointer;
+}
+
+/* Input Section */
+.input-card {
+  @apply bg-white rounded-2xl shadow-xl p-8 mb-12;
+}
+
+.input-group {
+  @apply mb-6;
+}
+
+.input-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.data-input {
+  @apply w-full min-h-[200px] p-4 border border-gray-300 rounded-xl 
+         font-mono text-sm focus:ring-2 focus:ring-blue-500 
+         focus:border-blue-500 transition-all duration-200;
+}
+
+/* Button Styles */
+.process-button {
+  @apply w-full bg-blue-600 text-white px-6 py-3 rounded-xl 
+         font-medium hover:bg-blue-700 focus:outline-none 
+         focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 
+         transition-all duration-200 disabled:opacity-50 
+         disabled:cursor-not-allowed;
+}
+
+.loading-state {
+  @apply flex items-center justify-center;
+}
+
+.spinner {
+  @apply animate-spin -ml-1 mr-2 h-5 w-5;
+}
+
+/* Error Message */
+.error-message {
+  @apply mt-4 bg-red-50 text-red-700 p-4 rounded-xl border border-red-200;
+}
+
+/* Results Section */
+.results-container {
+  @apply space-y-8;
+}
+
+.result-card {
+  @apply bg-white rounded-2xl shadow-xl p-8;
+}
+
+.result-header {
+  @apply flex items-center justify-between mb-6;
+}
+
+.result-title {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.record-count {
+  @apply bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium;
+}
+
+/* Batch Styles */
+.batches-container {
+  @apply space-y-6;
+}
+
+.batch-card {
+  @apply bg-gray-50 rounded-xl p-6;
+}
+
+.batch-header {
+  @apply flex justify-between items-center mb-4;
+}
+
+.batch-title {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.batch-count {
+  @apply text-gray-500 ml-2;
+}
+
+.copy-button {
+  @apply bg-white px-4 py-2 rounded-lg text-sm font-medium text-blue-600 
+         hover:bg-blue-50 border border-gray-300 transition-colors duration-200;
+}
+
+.batch-data {
+  @apply bg-white p-4 rounded-lg border border-gray-200 font-mono text-sm break-all;
+}
+
+/* Footer Styles */
+.site-footer {
+  @apply w-full py-8 bg-white/80 backdrop-blur-sm border-t border-gray-200;
+  flex-shrink: 0;
+}
+
+.footer-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.footer-content {
+  @apply flex flex-col items-center justify-center space-y-6;
+}
+
+.footer-links {
+  @apply flex flex-wrap justify-center gap-8;
+}
+
+.footer-link {
+  @apply flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-200;
+}
+
+.footer-link-icon {
+  @apply w-5 h-5 opacity-80 group-hover:opacity-100;
+}
+
+.footer-copyright {
+  @apply text-sm text-gray-500 text-center;
+}
+
+.animate-button {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--button-primary);
+  transition: all 0.2s ease;
+  overflow: visible;
+  z-index: 1;
+}
+
+.animate-button:active {
+  transform: scale(0.96);
+}
+
+.animate-button:before,
+.animate-button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.animate-button:hover:before {
+  top: -70%;
+  background-image: 
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, var(--button-primary) 20%, transparent 30%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-primary) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+.animate-button:hover:after {
+  bottom: -70%;
+  background-image: 
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-primary) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-primary) 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
