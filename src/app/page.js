@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import Footer from '@/components/Footer';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/next';
 
 
 
@@ -219,7 +219,7 @@ CLM567890`}
 
       </div>
       <Footer />
-      <SpeedInsights />
+      <Analytics />
     </div>
 
   );
